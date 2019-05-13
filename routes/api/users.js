@@ -2,6 +2,7 @@
 
 const express = require("express");
 const router = express.Router();
+const gravatar = require("gravatar");
 const { check, validationResult } = require("express-validator/check");
 
 // Import User schema
@@ -32,7 +33,6 @@ router.post(
     const { name, email, password } = req.body;
 
     try {
-      // See if user exists
       let user = await User.findOne({ email });
 
       if (user) {
