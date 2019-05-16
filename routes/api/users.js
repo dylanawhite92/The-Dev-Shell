@@ -3,6 +3,7 @@
 const express = require("express");
 const router = express.Router();
 const gravatar = require("gravatar");
+const bcrypt = require("bcryptjs");
 const { check, validationResult } = require("express-validator/check");
 
 // Import User schema
@@ -46,6 +47,7 @@ router.post(
         d: "mm"
       });
 
+      // Create instance of new user
       user = new User({
         name,
         email,
@@ -53,11 +55,15 @@ router.post(
         password
       });
 
-      // Encrypt password
+      // Encryption
+      const salt = await bcrypt.genSalt(10);
+      user.password = await bcrypt.hash(password, salt);
+
+      // Save user instance to database
+      await user.save();
 
       // Return jsonwebtoken
-
-      res.send("User Route.");
+      res.send("User Registered.");
     } catch (error) {
       console.error(error.message);
 
