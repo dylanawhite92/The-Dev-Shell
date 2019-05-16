@@ -39,7 +39,19 @@ router.post(
         res.status(400).json({ errors: [{ msg: "User already exists." }] });
       }
 
-      // Get user's gravatar (based on email)
+      // s is size, r is rating, d is default for emails without a gravatar
+      const avatar = gravatar.url(email, {
+        s: "200",
+        r: "pg",
+        d: "mm"
+      });
+
+      user = new User({
+        name,
+        email,
+        avatar,
+        password
+      });
 
       // Encrypt password
 
