@@ -4,6 +4,7 @@ const express = require("express");
 const router = express.Router();
 const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 const { check, validationResult } = require("express-validator/check");
 
 // Import User schema
@@ -37,7 +38,9 @@ router.post(
       let user = await User.findOne({ email });
 
       if (user) {
-        res.status(400).json({ errors: [{ msg: "User already exists." }] });
+        return res
+          .status(400)
+          .json({ errors: [{ msg: "User already exists." }] });
       }
 
       // s is size, r is rating, d is default for emails without a gravatar
@@ -62,8 +65,12 @@ router.post(
       // Save user instance to database
       await user.save();
 
-      // Return jsonwebtoken
-      res.send("User Registered.");
+      // JWT
+      const payload = {
+        user: {
+          id: user.id
+        }
+      };
     } catch (error) {
       console.error(error.message);
 
