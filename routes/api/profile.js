@@ -38,15 +38,55 @@ router.post(
   [
     auth,
     [
-      check("Status", "Status is required!")
+      check("status", "Status is required!")
         .not()
         .isEmpty(),
-      check("Skills", "Skills are required!")
+      check("skills", "Skills are required!")
         .not()
         .isEmpty()
     ]
   ],
-  async (req, res) => {}
+  async (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    // Destructuring model fields for profile
+    const {
+      company,
+      website,
+      location,
+      bio,
+      status,
+      githubusername,
+      skills,
+      facebook,
+      youtube,
+      twitter,
+      instagram,
+      linkedin
+    } = req.body;
+
+    // Build profile object
+    const profileFields = {};
+    profileFields.user = req.user.id;
+
+    if (company) profileFields.company = company;
+    if (website) profileFields.website = website;
+    if (location) profileFields.location = location;
+    if (bio) profileFields.bio = bio;
+    if (status) profileFields.status = status;
+    if (githubusername) profileFields.githubusername = githubusername;
+    if (skills) {
+      profileFields.skills = skills.split(",").map(skill => skill.trim());
+    }
+
+    console.log(skills);
+
+    res.send("Hello");
+  }
 );
 
 module.exports = router;
