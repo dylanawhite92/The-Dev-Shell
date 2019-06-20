@@ -262,7 +262,7 @@ router.delete("/experience/:exp_id", auth, async (req, res) => {
 // @desc    Add profile education
 // @access  Private
 router.put(
-  "/experience",
+  "/education",
   [
     auth,
     [
