@@ -13,3 +13,16 @@ body {
   background-color: white;
   color: #333333;
 }
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
