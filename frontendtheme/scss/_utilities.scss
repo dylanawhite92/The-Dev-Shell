@@ -34,6 +34,12 @@
   border-radius: 50%;
 }
 
+.line {
+  height: 1px;
+  background: #cccccc;
+  margin: 1.5rem 0;
+}
+
 // Backgrounds
 .bg {
   &-primary {
