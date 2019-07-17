@@ -1,6 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Register = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    password2: ""
+  });
+
+  // Destructuring for more concise code
+  const { name, email, password, password2 } = formData;
+
+  // Handle form values changing
+  const onChange = e =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  // Handle form submission
+  const onSubmit = e => {
+    e.preventDefault();
+
+    if (password !== password2) {
+      console.log("Passwords do not match.");
+    } else {
+      console.log(formData);
+    }
+  };
+
   return (
     <>
       <section className="container">
@@ -9,13 +34,27 @@ const Register = () => {
         <p className="lead">
           <i className="fas fa-user" /> Create Your Account
         </p>
-        <form action="dashboard.html" className="form">
+        <form className="form" onSubmit={e => onSubmit(e)}>
           <div className="form-group">
-            <input type="text" placeholder="Name" required />
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              value={name}
+              onChange={e => onChange(e)}
+              required
+            />
           </div>
 
           <div className="form-group">
-            <input type="email" placeholder="Email Address" />
+            <input
+              type="email"
+              placeholder="Email Address"
+              name="email"
+              value={email}
+              onChange={e => onChange(e)}
+              required
+            />
             <small className="form-text">
               This site uses Gravatar, so if you want a profile image, use a
               Gravatar email!
@@ -23,14 +62,24 @@ const Register = () => {
           </div>
 
           <div className="form-group">
-            <input type="password" placeholder="Password" minlength="6" />
+            <input
+              type="password"
+              placeholder="Password"
+              minLength="6"
+              name="password"
+              value={password}
+              onChange={e => onChange(e)}
+            />
           </div>
 
           <div className="form-group">
             <input
               type="password"
               placeholder="Confirm Password"
-              minlength="6"
+              minLength="6"
+              name="password2"
+              value={password2}
+              onChange={e => onChange(e)}
             />
           </div>
 
