@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Navbar, Landing, Login, Register } from "./components/index";
+import { Alert, Landing, Login, Navbar, Register } from "./components/index";
 import "./App.css";
 // Redux
 import { Provider } from "react-redux";
@@ -13,6 +13,7 @@ const App = () => (
         <Navbar />
         <Route exact path="/" component={Landing} />
         <section className="container">
+          <Alert />
           <Switch>
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />

@@ -1,4 +1,5 @@
-import Navbar from "./Navbar";
+import Alert from "./Alert";
 import Landing from "./Landing";
+import Navbar from "./Navbar";
 
-export { Navbar, Landing };
+export { Alert, Landing, Navbar };
