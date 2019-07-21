@@ -2,7 +2,7 @@ import uuid from "uuid";
 import { SET_ALERT, REMOVE_ALERT } from "./types";
 
 // Able to dispatch more than one action using thunk middleware after defined parameters
-export const setAlert = (msg, alertType, timeout = 3500) => dispatch => {
+export const setAlert = (msg, alertType, timeout = 5000) => dispatch => {
   // Get random universal ID
   const id = uuid.v4();
 
@@ -12,7 +12,7 @@ export const setAlert = (msg, alertType, timeout = 3500) => dispatch => {
     payload: { msg, alertType, id }
   });
 
-  // Remove alert after 3.5 seconds
+  // Remove alert after 5 seconds
   setTimeout(
     () =>
       dispatch({
