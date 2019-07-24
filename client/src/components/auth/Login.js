@@ -24,7 +24,6 @@ const Login = ({ login, isAuthenticated }) => {
     login(email, password);
   };
 
-  // Redirect if logged in
   if (isAuthenticated) {
     return <Redirect to="/dashboard" />;
   }
@@ -80,7 +79,6 @@ const mapStateToProps = state => ({
 });
 
 export default connect(
-  null,
   mapStateToProps,
   { login }
 )(Login);
