@@ -1,6 +1,13 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Alert, Landing, Login, Navbar, Register } from "./components/index";
+import {
+  Alert,
+  Dashboard,
+  Landing,
+  Login,
+  Navbar,
+  Register
+} from "./components/index";
 import "./App.css";
 // Redux
 import { Provider } from "react-redux";
@@ -28,6 +35,7 @@ const App = () => {
             <Switch>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/dashboard" component={Dashboard} />
             </Switch>
           </section>
         </>
