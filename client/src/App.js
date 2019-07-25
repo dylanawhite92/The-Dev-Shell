@@ -6,6 +6,7 @@ import {
   Landing,
   Login,
   Navbar,
+  PrivateRoute,
   Register
 } from "./components/index";
 import "./App.css";
@@ -35,7 +36,7 @@ const App = () => {
             <Switch>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              <Route exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
           </section>
         </>
