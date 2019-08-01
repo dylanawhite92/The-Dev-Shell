@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
@@ -23,11 +24,22 @@ const Dashboard = ({
         <i className="fas fa-user" /> Welcome {user && user.name}
       </p>
 
-      {profile !== null ? <>has profile</> : <>has no profile</>}
+      {profile !== null ? (
+        <>has profile</>
+      ) : (
+        <>
+          <p>
+            You have not yet created a profile! Please add some info about
+            yourself.
+          </p>
+          <Link to="/create-profile" className="btn btn-primary my-1">
+            {" "}
+            Create Profile
+          </Link>
+        </>
+      )}
     </>
   );
-
-  return <div>Dashboard</div>;
 };
 
 Dashboard.propTypes = {
