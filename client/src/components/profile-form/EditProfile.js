@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -28,6 +28,27 @@ const EditProfile = ({
 
   // State for toggling social inputs
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
+
+  // Get profile data, load empty fields if none
+  useEffect(() => {
+    getCurrentProfile();
+
+    setFormData({
+      company: loading || !profile.company ? "" : profile.company,
+      website: loading || !profile.website ? "" : profile.website,
+      location: loading || !profile.location ? "" : profile.location,
+      status: loading || !profile.status ? "" : profile.status,
+      skills: loading || !profile.skills ? "" : profile.skills.join(","),
+      githubusername:
+        loading || !profile.githubusername ? "" : profile.githubusername,
+      bio: loading || !profile.bio ? "" : profile.bio,
+      twitter: loading || !profile.twitter ? "" : profile.twitter,
+      facebook: loading || !profile.facebook ? "" : profile.facebook,
+      linkedin: loading || !profile.linkedin ? "" : profile.linkedin,
+      youtube: loading || !profile.youtube ? "" : profile.youtube,
+      instagram: loading || !profile.instagram ? "" : profile.instagram
+    });
+  });
 
   // Destructure for variables
   const {
