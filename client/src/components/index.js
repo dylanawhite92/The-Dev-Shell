@@ -1,10 +1,17 @@
 import { Login, Register } from "./auth";
 import { Dashboard } from "./dashboard";
 import { Alert, Landing, Navbar, Spinner } from "./layout";
-import { CreateProfile, EditProfile } from "./profile-form";
+import {
+  AddEducation,
+  AddExperience,
+  CreateProfile,
+  EditProfile
+} from "./profile-form";
 import { PrivateRoute } from "./routing";
 
 export {
+  AddEducation,
+  AddExperience,
   Alert,
   CreateProfile,
   Dashboard,
