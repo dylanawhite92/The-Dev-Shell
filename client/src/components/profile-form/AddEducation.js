@@ -8,6 +8,11 @@ const AddEducation = props => {
   return <div />;
 };
 
-AddEducation.propTypes = {};
+AddEducation.propTypes = {
+  addExperience: PropTypes.func.isRequired
+};
 
-export default AddEducation;
+export default connect(
+  null,
+  { addExperience }
+)(AddEducation);
