@@ -119,6 +119,11 @@ const AddExperience = ({ addExperience, history }) => {
   );
 };
 
-AddExperience.propTypes = {};
+AddExperience.propTypes = {
+  addExperience: PropTypes.func.isRequired
+};
 
-export default AddExperience;
+export default connect(
+  null,
+  { addExperience }
+)(AddExperience);
