@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
-import { DashboardActions, Experience } from "./index";
+import { DashboardActions, Experience, Education } from "./index";
 import { getCurrentProfile } from "../../actions/profile";
 
 const Dashboard = ({
@@ -29,6 +29,7 @@ const Dashboard = ({
         <>
           <DashboardActions />
           <Experience experience={profile.experience} />
+          <Education education={profile.education} />
         </>
       ) : (
         <>
