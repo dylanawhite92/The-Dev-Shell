@@ -56,11 +56,11 @@ const App = () => {
                 path="/add-experience"
                 component={AddExperience}
               />
-              {/* <PrivateRoute
+              <PrivateRoute
                 exact
                 path="/add-education"
                 component={AddEducation}
-              /> */}
+              />
             </Switch>
           </section>
         </>
