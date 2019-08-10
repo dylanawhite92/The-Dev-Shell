@@ -2,7 +2,8 @@ import {
   GET_PROFILE,
   PROFILE_ERROR,
   CLEAR_PROFILE,
-  UPDATE_PROFILE
+  UPDATE_PROFILE,
+  GET_PROFILES
 } from "../actions/types";
 
 // Get profile, update it, clear it from state
@@ -23,6 +24,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         profile: payload,
+        loading: false
+      };
+    case GET_PROFILES:
+      return {
+        ...state,
+        profiles: payload,
         loading: false
       };
     case PROFILE_ERROR:
