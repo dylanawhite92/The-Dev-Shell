@@ -3,7 +3,8 @@ import {
   PROFILE_ERROR,
   CLEAR_PROFILE,
   UPDATE_PROFILE,
-  GET_PROFILES
+  GET_PROFILES,
+  GET_REPOS
 } from "../actions/types";
 
 // Get profile, update it, clear it from state
@@ -43,6 +44,12 @@ export default (state = initialState, action) => {
         ...state,
         profile: null,
         repos: [],
+        loading: false
+      };
+    case GET_REPOS:
+      return {
+        ...state,
+        repos: payload,
         loading: false
       };
     default:
