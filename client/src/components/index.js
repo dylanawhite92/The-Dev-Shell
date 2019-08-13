@@ -7,6 +7,7 @@ import {
   CreateProfile,
   EditProfile
 } from "./profile-form";
+import { Profiles, ProfileItem } from "./profiles";
 import { PrivateRoute } from "./routing";
 
 export {
@@ -20,6 +21,8 @@ export {
   Login,
   Navbar,
   PrivateRoute,
+  Profiles,
+  ProfileItem,
   Register,
   Spinner
 };
