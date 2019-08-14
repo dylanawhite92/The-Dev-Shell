@@ -4,7 +4,16 @@ import { Spinner } from "../layout/Spinner";
 import { getProfileById } from "../../actions/profile";
 import PropTypes from "prop-types";
 
-const Profile = props => {
+const Profile = ({
+  getProfileById,
+  profile: { profile, loading },
+  auth,
+  match
+}) => {
+  useEffect(() => {
+    getProfileById(match.params.id);
+  }, [getProfileById]);
+
   return <div>profile</div>;
 };
 
