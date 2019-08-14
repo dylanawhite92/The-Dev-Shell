@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const ProfileItem = props => {
-  return <div />;
+  return <div>test</div>;
 };
 
 ProfileItem.propTypes = {};
