@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { Spinner } from "../layout/Spinner";
+import { Spinner } from "../layout";
 import { getProfileById } from "../../actions/profile";
 import PropTypes from "prop-types";
 
@@ -14,7 +14,7 @@ const Profile = ({
     getProfileById(match.params.id);
   }, [getProfileById]);
 
-  return <div>profile</div>;
+  return <>{profile === null || loading ? <Spinner /> : <>profile</>}</>;
 };
 
 Profile.propTypes = {
