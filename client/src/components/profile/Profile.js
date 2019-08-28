@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Spinner } from "../layout";
 import { getProfileById } from "../../actions/profile";
-import { ProfileTop, ProfileAbout } from "../profile";
+import { ProfileTop, ProfileAbout, ProfileExperience } from "../profile";
 import PropTypes from "prop-types";
 
 const Profile = ({
@@ -37,6 +37,23 @@ const Profile = ({
           <div className="profile-grid my-1">
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
+
+            <div className="profile-exp bg-white p-2">
+              <h2 className="text-primary">Experience</h2>
+
+              {profile.experience.length > 0 ? (
+                <>
+                  {profile.experience.map(experience => (
+                    <ProfileExperience
+                      key={experience._id}
+                      experience={experience}
+                    />
+                  ))}
+                </>
+              ) : (
+                <h4>No experience added</h4>
+              )}
+            </div>
           </div>
         </>
       )}
