@@ -115,7 +115,7 @@
 .bg-white {
   background-color: #fff;
   color: #333;
-  border: #cccccc 1px solid;
+  border: #cccccc 1px solid !important;
 }
 .btn {
   display: inline-block;
