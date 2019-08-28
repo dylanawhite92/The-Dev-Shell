@@ -4,7 +4,11 @@ import { connect } from "react-redux";
 import { Spinner } from "../layout";
 import { getPosts } from "../../actions/post";
 
-const Posts = props => {
+const Posts = ({ getPosts, post: { posts, loading } }) => {
+  useEffect(() => {
+    getPosts();
+  }, [getPosts]);
+
   return <div></div>;
 };
 
