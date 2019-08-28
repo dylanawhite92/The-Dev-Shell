@@ -7,7 +7,8 @@ import {
   ProfileTop,
   ProfileAbout,
   ProfileEducation,
-  ProfileExperience
+  ProfileExperience,
+  ProfileGithub
 } from "../profile";
 import PropTypes from "prop-types";
 
@@ -76,6 +77,10 @@ const Profile = ({
                 <h4>No education added</h4>
               )}
             </div>
+
+            {profile.githubusername && (
+              <ProfileGithub username={profile.githubusername} />
+            )}
           </div>
         </>
       )}
