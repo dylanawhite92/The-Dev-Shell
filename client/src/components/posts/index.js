@@ -1,3 +1,4 @@
+import PostItem from "./PostItem";
 import Posts from "./Posts";
 
-export { Posts };
+export { PostItem, Posts };
