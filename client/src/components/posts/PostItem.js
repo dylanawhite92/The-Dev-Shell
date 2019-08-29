@@ -33,7 +33,7 @@ const PostItem = ({
       <button class="btn">
         <i class="fas fa-thumbs-up"></i> <span>4</span>
       </button>
-      <button class="btn">
+      <button class="btn btn-light">
         <i class="fas fa-thumbs-down"></i>
       </button>
 
