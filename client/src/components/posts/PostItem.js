@@ -34,9 +34,11 @@ const PostItem = ({
         Discussion <span className="comment-count">{comments.length}</span>
       </a>
 
-      <button className="btn btn-danger">
-        <i className="fas fa-times"></i>
-      </button>
+      {!auth.loading && user === auth.user._id && (
+        <button className="btn btn-danger">
+          <i className="fas fa-times"></i>
+        </button>
+      )}
     </div>
   </div>
 );
