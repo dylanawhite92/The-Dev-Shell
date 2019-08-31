@@ -20,6 +20,8 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
         <i className="fas fa-user"></i> Welcome to the Community
       </p>
 
+      <PostForm />
+
       <div className="posts">
         {posts.map(post => (
           <PostItem key={post._id} post={post} />
