@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Spinner } from "../layout";
 import { getPosts } from "../../actions/post";
-import { PostItem } from "./index";
+import { PostItem, PostForm } from "./index";
 
 const Posts = ({ getPosts, post: { posts, loading } }) => {
   useEffect(() => {
@@ -19,8 +19,6 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
       <p className="lead">
         <i className="fas fa-user"></i> Welcome to the Community
       </p>
-
-      {/* PostForm - where a user will fill out a post */}
 
       <div className="posts">
         {posts.map(post => (
