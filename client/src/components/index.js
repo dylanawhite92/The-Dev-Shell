@@ -7,6 +7,7 @@ import {
   CreateProfile,
   EditProfile
 } from "./profile-form";
+import { Post } from "./post";
 import { Posts } from "./posts";
 import { Profile } from "./profile";
 import { Profiles, ProfileItem } from "./profiles";
@@ -22,6 +23,7 @@ export {
   Landing,
   Login,
   Navbar,
+  Post,
   Posts,
   PrivateRoute,
   Profile,

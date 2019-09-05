@@ -10,6 +10,7 @@ import {
   Landing,
   Login,
   Navbar,
+  Post,
   Posts,
   PrivateRoute,
   Profile,
@@ -67,6 +68,7 @@ const App = () => {
                 component={AddEducation}
               />
               <PrivateRoute exact path="/posts" component={Posts} />
+              <PrivateRoute exact path="/posts/:id" component={Post} />
             </Switch>
           </section>
         </>
