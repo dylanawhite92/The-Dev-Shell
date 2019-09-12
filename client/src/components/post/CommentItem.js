@@ -2,31 +2,25 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import Moment from "react-moment";
 
 const CommentItem = ({
   postId,
   comment: { _id, text, name, avatar, user, date },
   auth
 }) => (
-  <div class="post bg-white p-1 my-1">
+  <div className="post bg-white p-1 my-1">
     <div>
-      <a href="profile.html">
-        <img
-          class="round-img"
-          src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200"
-          alt=""
-        />
-        <h4>John Doe</h4>
-      </a>
+      <Link to={`/profile/user/${user}`}>
+        <img className="round-img" src={avatar} alt={name} />
+        <h4>{name}</h4>
+      </Link>
     </div>
     <div>
-      <p class="my-1">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint possimus
-        corporis sunt necessitatibus! Minus nesciunt soluta suscipit nobis. Amet
-        accusamus distinctio cupiditate blanditiis dolor? Illo perferendis
-        eveniet cum cupiditate aliquam?
+      <p className="my-1">{text}</p>
+      <p className="post-date">
+        Posted on <Moment format="YYYY/MM/DD">{date}</Moment>
       </p>
-      <p className="post-date">Posted on 04/16/2019</p>
     </div>
   </div>
 );
