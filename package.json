@@ -2,10 +2,10 @@
   "name": "the-dev-shell",
   "version": "1.0.0",
   "description": "A social network for developers.",
-  "main": "server.js",
+  "main": "server",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js",
+    "start": "node server",
+    "server": "nodemon server",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm i --prefix client && npm run build --prefix client"

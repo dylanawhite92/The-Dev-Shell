@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const config = require("config");
-// Pull mongoDB connection string from default.json
 const db = config.get("mongoURI");
 
 // Async/Await connection
