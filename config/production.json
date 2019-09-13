@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://dylanthagod:dylanthagod@the-dev-shell-5sgkx.mongodb.net/test?retryWrites=true",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "dc3918dc7ba482b73630",
+  "githubSecret": "2d8628bfded44c6c9ef58790278b423bc5e02656"
+}
