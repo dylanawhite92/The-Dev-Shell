@@ -1,6 +1,6 @@
 import { Login, Register } from "./auth";
 import { Dashboard } from "./dashboard";
-import { Alert, Landing, Navbar, Spinner } from "./layout";
+import { Alert, Landing, Navbar, NotFound, Spinner } from "./layout";
 import {
   AddEducation,
   AddExperience,
@@ -23,6 +23,7 @@ export {
   Landing,
   Login,
   Navbar,
+  NotFound,
   Post,
   Posts,
   PrivateRoute,
