@@ -1,23 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import {
-  AddEducation,
-  AddExperience,
-  Alert,
-  CreateProfile,
-  EditProfile,
-  Dashboard,
-  Landing,
-  Login,
-  Navbar,
-  NotFound,
-  Post,
-  Posts,
-  PrivateRoute,
-  Profile,
-  Profiles,
-  Register
-} from "./components/index";
+import { Landing, Navbar, Routes } from "./components/index";
 import "./App.css";
 // Redux
 import { Provider } from "react-redux";
@@ -40,6 +23,7 @@ const App = () => {
         <>
           <Navbar />
           <Route exact path="/" component={Landing} />
+          <Route component={Routes} />
         </>
       </Router>
     </Provider>

@@ -11,7 +11,7 @@ import { Post } from "./post";
 import { Posts } from "./posts";
 import { Profile } from "./profile";
 import { Profiles, ProfileItem } from "./profiles";
-import { PrivateRoute } from "./routing";
+import { PrivateRoute, Routes } from "./routing";
 
 export {
   AddEducation,
@@ -31,5 +31,6 @@ export {
   Profiles,
   ProfileItem,
   Register,
+  Routes,
   Spinner
 };

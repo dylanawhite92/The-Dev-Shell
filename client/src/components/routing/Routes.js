@@ -1,4 +1,21 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
+import {
+  AddEducation,
+  AddExperience,
+  Alert,
+  CreateProfile,
+  EditProfile,
+  Dashboard,
+  Login,
+  NotFound,
+  Post,
+  Posts,
+  PrivateRoute,
+  Profile,
+  Profiles,
+  Register
+} from "../index";
 
 const Routes = () => {
   return (
