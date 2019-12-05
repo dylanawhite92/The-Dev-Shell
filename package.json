@@ -22,7 +22,7 @@
     "lodash": "^4.17.14",
     "lodash.template": "^4.5.0",
     "mem": "^5.1.1",
-    "mongoose": "^5.5.5",
+    "mongoose": "^5.7.5",
     "request": "^2.88.0"
   },
   "devDependencies": {
